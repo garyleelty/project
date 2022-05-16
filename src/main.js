@@ -7,14 +7,12 @@ import store from './store'
 import { initializeApp } from "firebase/app"
 
 const firebaseConfig = {
-    apiKey: "AIzaSyD5w0CdtqdXQF5Fx0sk4FKKky6LeO4UumY",
-    authDomain: "enduring-lane-329703.firebaseapp.com",
-    databaseURL: "https://enduring-lane-329703-default-rtdb.firebaseio.com",
-    projectId: "enduring-lane-329703",
-    storageBucket: "enduring-lane-329703.appspot.com",
-    messagingSenderId: "595707837853",
-    appId: "1:595707837853:web:91b96c92710a98b3834374",
-    measurementId: "G-573XM6LJ2H"
+    apiKey: "AIzaSyC8Cbjf2Dosr3L-PKC0FoQHgKS67eVpatU",
+    authDomain: "project1-b1937.firebaseapp.com",
+    projectId: "project1-b1937",
+    storageBucket: "project1-b1937.appspot.com",
+    messagingSenderId: "844244535003",
+    appId: "1:844244535003:web:3cf80c723183bcc03eaefe"
 };
   
   // Initialize Firebase

@@ -28,7 +28,7 @@
 
 <script>
 import {getAuth, onAuthStateChanged, signInWithEmailAndPassword} from 'firebase/auth';
-import { getDatabase, ref, set } from "firebase/database";
+import axios from 'axios';
 export default {
     name: 'login',
     
@@ -59,16 +59,13 @@ export default {
                 console.log("User logged in");
                 this.$router.push('/')
                 .then(()=>{
-                    const db = getDatabase();
-                    fetch('https://api.ipify.org?format=json')
-                    .then(response => response.json())
-                    .then(response => {
-                        fetch('http://ip-api.com/json/'+response.ip+'?fields=region,query')
-                        .then(response1 => response1.json())
-                        .then(response1 => {
-                            console.log(response1.region)
-                        });
+                    const user = getAuth().currentUser;
+                    axios.post('https://project1-b1937-default-rtdb.firebaseio.com/users/'+user.uid+ '.json', {
+                        userId: user.uid,
+                        name: this.email,
                     });
+                    //console.log('Ass');
+                    
                 });
             })
             .catch((error)=>{
