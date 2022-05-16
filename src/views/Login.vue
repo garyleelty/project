@@ -58,15 +58,6 @@ export default {
             .then(()=>{
                 console.log("User logged in");
                 this.$router.push('/')
-                .then(()=>{
-                    const user = getAuth().currentUser;
-                    axios.post('https://project1-b1937-default-rtdb.firebaseio.com/users/'+user.uid+ '.json', {
-                        userId: user.uid,
-                        name: this.email,
-                    });
-                    //console.log('Ass');
-                    
-                });
             })
             .catch((error)=>{
                 switch (error.code){ 

@@ -56,8 +56,10 @@ export default {
         },
         submit(){
             const user = getAuth().currentUser;
-            axios.post('https://project1-b1937-default-rtdb.firebaseio.com/users/'+user+'.json', {
-                items : this.items
+            axios.put('https://project1-b1937-default-rtdb.firebaseio.com/users/'+user.uid+'.json', {
+                user: user.uid,
+                email: user.email,
+                ztems : this.items
 
             });
         }
