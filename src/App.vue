@@ -6,6 +6,9 @@
           <router-link to="/">Home</router-link>
         </li>
         <li>
+          <router-link to="/musicToday">Music Today</router-link>
+        </li>
+        <li>
           <a href="#" @click="signOut">Log Out</a>
         </li>
       </ul>
