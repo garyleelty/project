@@ -28,6 +28,7 @@
 
 <script>
 import {getAuth, onAuthStateChanged, signInWithEmailAndPassword} from 'firebase/auth';
+import { getDatabase, ref, set } from "firebase/database";
 export default {
     name: 'login',
     
@@ -57,6 +58,18 @@ export default {
             .then(()=>{
                 console.log("User logged in");
                 this.$router.push('/')
+                .then(()=>{
+                    const db = getDatabase();
+                    fetch('https://api.ipify.org?format=json')
+                    .then(response => response.json())
+                    .then(response => {
+                        fetch('http://ip-api.com/json/'+response.ip+'?fields=region,query')
+                        .then(response1 => response1.json())
+                        .then(response1 => {
+                            console.log(response1.region)
+                        });
+                    });
+                });
             })
             .catch((error)=>{
                 switch (error.code){ 

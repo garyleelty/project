@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth'
+import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 export default {
   name: 'app',
   data(){
