@@ -28,7 +28,6 @@
 
 <script>
 import {getAuth, onAuthStateChanged, signInWithEmailAndPassword} from 'firebase/auth';
-import axios from 'axios';
 export default {
     name: 'login',
     
