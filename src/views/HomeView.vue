@@ -1,30 +1,32 @@
 <template>
     <div>
     <p>{{counter}}/10</p>
-    <ul class="no-bullets">
-        <span>Choose what Genre you like</span>
-        <li v-for="(product , index) in items" :key="index" >
-            <button @click="add(product,index)" >
+    <ul class="no-bullets list-group ">
+        <span>Choose 10 songs you like the most</span>
+        <li class="list-group-item" v-for="(product , index) in items" :key="index" >
+           
+            <button class="btn btn-light" @click="add(product,index)" >
             <!--<input  :value="product" name="product" type="checkbox" v-model="checked" />
             <label :for="product.lang"><span>{{product}}</span></label>-->
             <span>{{'Track name:'+product.track + ' Artist name:' + product.artist}}</span>
             </button>
+           
         </li>
     </ul>
     <span>You have Choose</span>
-    <ul class="no-bullets one-line">
-        <li v-for="(product, index) in checked" :key="index" >
-            <button @click="remove(product,index)" >
+    <ul class="no-bullets ">
+        <li class="list-group-item active" v-for="(product, index) in checked" :key="index" >
+            <button class="btn btn-primary" @click="remove(product,index)" >
             <!--<input  :value="product" name="product" type="checkbox" v-model="checked" />
             <label :for="product.lang"><span>{{product}}</span></label>-->
             <span>{{'Track name:'+product.track + ' Artist name:' + product.artist}}</span>
             </button>
         </li>
     </ul>
-    <button @click="nextPage">
+    <button class="btn btn-secondary" @click="nextPage">
         <span>nextPage</span>
     </button>
-    <button @click="submit">
+    <button class="btn btn-success" @click="submit">
         <span>Submit</span>
     </button>
     
@@ -47,7 +49,7 @@ export default {
     },
     mounted() {
         d3.csv("data.csv").then((data) => {
-            for (let i = 0; i < 20; i++) {
+            for (let i = 0; i < 5; i++) {
                 var rand = Math.floor(Math.random()*67500)
                 var track = data[rand]['track_name'];
                 var artist = data[rand]['artist_name'];
@@ -56,6 +58,8 @@ export default {
                 obj['track'] = track
                 obj['artist'] = artist
                 obj['uri'] = url
+                obj['url'] = 'https://open.spotify.com/embed/track/' + url 
+                console.log(obj['url']);
                 this.items.push(obj);
             }
             });
@@ -63,7 +67,7 @@ export default {
     methods:{
         randomList(){
             d3.csv("data.csv").then((data) => {
-            for (let i = 0; i < 20; i++) {
+            for (let i = 0; i < 5; i++) {
                 var rand = Math.floor(Math.random()*67500)
                 var track = data[rand]['track_name'];
                 var artist = data[rand]['artist_name'];
@@ -72,6 +76,8 @@ export default {
                 obj['track'] = track
                 obj['artist'] = artist
                 obj['uri'] = url
+                obj['url'] = 'https://open.spotify.com/embed/track/' + url 
+                console.log(obj['url']);
                 this.items.push(obj);
             }
             });

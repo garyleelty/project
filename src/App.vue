@@ -1,15 +1,15 @@
 <template>
   <div v-if="isLoggedIn">
     <nav>
-      <ul>
-        <li>
-          <router-link to="/">Home</router-link>
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <router-link  class="nav-link" to="/">Home</router-link>
         </li>
-        <li>
-          <router-link to="/musicToday">Music Today</router-link>
+        <li class="nav-item">
+          <router-link class="nav-link" to="/musicToday">Music Today</router-link>
         </li>
-        <li>
-          <a href="#" @click="signOut">Log Out</a>
+        <li class="nav-item">
+          <a href="#" class="nav-link" @click="signOut">Log Out</a>
         </li>
       </ul>
     </nav>

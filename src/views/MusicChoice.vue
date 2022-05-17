@@ -4,8 +4,15 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
-
+  methods:{
+    get(){
+      axios.get('https://project1-b1937-default-rtdb.firebaseio.com/users/.json')
+      .then((res) => console.log(res))
+      .catch(err => console.log(err))
+    }
+  }
 }
 </script>
 

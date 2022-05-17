@@ -56,7 +56,7 @@ export default {
             signInWithEmailAndPassword(getAuth(),this.email,this.password)
             .then(()=>{
                 console.log("User logged in");
-                this.$router.push('/')
+                this.$router.push('/musicToday');
             })
             .catch((error)=>{
                 switch (error.code){ 
