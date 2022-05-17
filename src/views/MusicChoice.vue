@@ -1,6 +1,7 @@
 <template>
-  <div v-for="(url1) in url">
-    <iframe :src="url1" width="50%" height="80" frameBorder="0" allow="autoplay; encrypted-media;" loading="lazy"></iframe>
+  <div class="embed-responsive embed-responsive-16by9" v-for="(url1) in url" :key="url1">
+
+    <iframe :src="url1" class="embed-responsive-item" width="80%" height="80" frameBorder="0" allow="autoplay; encrypted-media;" loading="lazy"></iframe>
   </div>
 </template>
 
