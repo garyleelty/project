@@ -19,5 +19,6 @@ const firebaseConfig = {
 let app = createApp(App)
   
 initializeApp(firebaseConfig);
+
 app.config.globalProperties.firebaseConfig = firebaseConfig; 
 app.use(store).use(router).mount('#app')

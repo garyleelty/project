@@ -41,7 +41,7 @@ export default {
     beforeCreate(){
           onAuthStateChanged( getAuth(), (user) => {
             if (user) {    
-                this.$router.push('/');
+                this.$router.push('/musicToday');
             }else{
                 this.$router.push('/login');
             }
