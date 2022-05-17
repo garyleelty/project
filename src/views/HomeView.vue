@@ -94,6 +94,7 @@ export default {
             if(this.counter < 10){
                 alert('Please pick 10 songs')
             }else{
+                
                 const user = getAuth().currentUser;
                 let returnUri = [];
                 const myArray = this.checked.valueOf()
@@ -107,8 +108,6 @@ export default {
                     email: user.email,
                     items : returnUri
                 });
-                
-                
                 this.$router.push('/musicToday');
             }         
         },
