@@ -1,6 +1,6 @@
 <template>
   <div v-for="(url1) in url">
-    <iframe :src="url1" width="50%" height="80" frameBorder="0" allow="autoplay; encrypted-media;"></iframe>
+    <iframe :src="url1" width="50%" height="80" frameBorder="0" allow="autoplay; encrypted-media;" loading="lazy"></iframe>
   </div>
 </template>
 
