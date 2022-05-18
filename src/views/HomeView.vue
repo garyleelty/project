@@ -84,7 +84,7 @@ export default {
             });
         },
 
-add(product,index){
+        add(product,index){
                 this.checked.push(product);
                 this.items.splice(index,1);
                 this.counter++;
