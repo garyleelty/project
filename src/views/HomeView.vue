@@ -84,13 +84,9 @@ export default {
             });
         },
         add(product,index){
-            if(this.counter < 10){
                 this.checked.push(product);
                 this.items.splice(index,1);
                 this.counter++;
-            }else{
-                alert('Good');
-            }
         },
         remove(product,index){
             this.checked.splice(index,1);
