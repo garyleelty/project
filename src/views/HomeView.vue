@@ -9,7 +9,7 @@
             <!--<input  :value="product" name="product" type="checkbox" v-model="checked" />
             <label :for="product.lang"><span>{{product}}</span></label>-->
             <span>{{'Track name:'+product.track + ' Artist name:' + product.artist}}</span>
-            <iframe :src="product.url" class="embed-responsive-item" width="80%" height="80" frameBorder="0" allow="autoplay; encrypted-media;" loading="lazy"></iframe>
+            <iframe :src="product.url" width="80%" height="80" frameBorder="0" allow="autoplay; encrypted-media;" loading="lazy"></iframe>
             </button>
             
         </li>
