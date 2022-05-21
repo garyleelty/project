@@ -7,7 +7,7 @@
     <button v-if="likeList.includes(url1.uri1)" class="btn btn-primary" @click="unlikes(url1.uri1)"><span>un Like</span></button>
   </div>
   <br>
-  <button class="btn btn-primary" @click="PPush"><span>Push</span> </button>
+  <!--<button class="btn btn-primary" @click="PPush"><span>Push</span> </button>-->
 </template>
 
 <script>

@@ -40,6 +40,7 @@ import {getAuth} from 'firebase/auth';
 
 import * as d3 from "d3";
 
+
 export default {
     data(){
         return {
@@ -106,8 +107,9 @@ export default {
                 for (let x of myArray) {
                     returnUri.push(x.uri);
                 }
-                console.log(returnUri);
-                axios.put('https://project1-b1937-default-rtdb.firebaseio.com/users/.json', {
+
+                console.log('tt');
+                this.axios.put('https://project1-b1937-default-rtdb.firebaseio.com/users/.json', {
                     user: user.uid,
                     email: user.email,
                     items : returnUri

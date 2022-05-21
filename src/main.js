@@ -5,6 +5,8 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap"
 import store from './store'
 import { initializeApp } from "firebase/app"
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
 const firebaseConfig = {
     apiKey: "AIzaSyC8Cbjf2Dosr3L-PKC0FoQHgKS67eVpatU",
@@ -17,8 +19,9 @@ const firebaseConfig = {
   
   // Initialize Firebase
 let app = createApp(App)
+
   
 initializeApp(firebaseConfig);
 
 app.config.globalProperties.firebaseConfig = firebaseConfig; 
-app.use(store).use(router).mount('#app')
+app.use(store).use(VueAxios, axios).use(router).mount('#app')
