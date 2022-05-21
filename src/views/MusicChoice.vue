@@ -74,7 +74,7 @@ export default {
       this.axios.put('https://project1-b1937-default-rtdb.firebaseio.com/users/.json', {
                     items : this.og
                 });
-                this.$router.push('/musicToday');
+                this.$router.push('/login');
     },
     PPush(){
       
