@@ -7,10 +7,12 @@
     <button v-if="likeList.includes(url1.uri1)" class="btn btn-primary" @click="unlikes(url1.uri1)"><span>un Like</span></button>
   </div>
   <br>
+  <button class="btn btn-primary" @click="ppp"><span>Push</span> </button>
   <!--<button class="btn btn-primary" @click="PPush"><span>Push</span> </button>-->
 </template>
 
 <script>
+import {getAuth} from 'firebase/auth';
 import axios from 'axios'
 export default {
   data(){
@@ -19,6 +21,7 @@ export default {
       url:[],
       push1:'',
       likeList:[],
+      og:[],
     };
   },
   beforeMount(){
@@ -39,20 +42,42 @@ export default {
       .catch(err => console.log(err))
     
     
-    
-    
   },
   methods:{
     likes(items){
       this.likeList.push(items);
-      //console.log(this.likeList)
+      console.log(this.likeList);
     },
     unlikes(items){
       let index = this.likeList.indexOf(items)
       this.likeList.splice(index,1);
       //console.log(this.likeList)
     },
+    ppp(){
+      
+      this.axios.get('https://project1-b1937-default-rtdb.firebaseio.com/users/items.json')
+      .then((res) => {
+      
+      var c = Object.values(res)[0]
+  
+       for(var i = 0; i < c.length; i++) {
+        var obj = c[i];
+        this.og.push(obj)
+        }
+      })
+      .catch(err => console.log(err))
+      
+      for(var i =0; i < this.likeList.length; i++){
+        this.og.push(this.likeList[i])
+      }
+      console.log(this.og)
+      this.axios.put('https://project1-b1937-default-rtdb.firebaseio.com/users/.json', {
+                    items : this.og
+                });
+                this.$router.push('/musicToday');
+    },
     PPush(){
+      
       for (var x of this.uri) {
         this.push1= this.push1+'spotify%3Atrack%3A'+x+'%2C'
       }
