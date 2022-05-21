@@ -3,8 +3,8 @@
     <div class="embed-responsive embed-responsive-16by9">
     <iframe :src="url1.url2" class="embed-responsive-item" width="80%" height="80" frameBorder="0" allow="autoplay; encrypted-media;" loading="lazy"></iframe>
     </div>
-    <!--<button v-if="!likeList.includes(url1.uri1)" class="btn btn-primary" @click="likes(url1.uri1)"><span>Like</span></button>
-    <button v-if="likeList.includes(url1.uri1)" class="btn btn-primary" @click="unlikes(url1.uri1)"><span>un Like</span></button>-->
+    <button v-if="!likeList.includes(url1.uri1)" class="btn btn-primary" @click="likes(url1.uri1)"><span>Like</span></button>
+    <button v-if="likeList.includes(url1.uri1)" class="btn btn-primary" @click="unlikes(url1.uri1)"><span>un Like</span></button>
   </div>
   <br>
   <!--<button class="btn btn-primary" @click="ppp"><span>Push</span> </button>-->
@@ -72,9 +72,6 @@ export default {
       }
       console.log(this.og)
       this.axios.put('https://project1-b1937-default-rtdb.firebaseio.com/users/.json', {
-          items:this.og
-      });
-      this.axios.put('https://project1-b1937-default-rtdb.firebaseio.com/users/items.json', {
           items:this.og
       });
     },
