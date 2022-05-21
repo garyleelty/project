@@ -32,7 +32,7 @@ export default {
       if(user){
         console.log('Current User: ' + user.email)
         this.email = user.email;
-        this.$router.push('/musicToday');
+        this.$router.push('/wait');
         this.isLoggedIn = true;
       }else{
         this.isLoggedIn = false;
@@ -45,6 +45,7 @@ export default {
       const auth = getAuth();
       signOut(auth).then(() => {
         alert("Sign Out Successfully");
+        this.$router.push('/login');
       }).catch((error) => {
         console.log(error);
       });

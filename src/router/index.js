@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import musicToday from '../views/MusicChoice.vue'
+import wait from '../views/wait.vue'
 const routes = [
   {
     path: '/',
@@ -23,6 +24,11 @@ const routes = [
     path: '/musicToday',
     name: 'musicToday',
     component: musicToday
+  },
+  {
+    path: '/wait',
+    name: 'wait',
+    component:wait
   },
 ]
 

@@ -114,7 +114,7 @@ export default {
                     email: user.email,
                     items : returnUri
                 });
-                this.$router.push('/musicToday');
+                this.$router.push('/wait');
             }         
         },
         nextPage(){

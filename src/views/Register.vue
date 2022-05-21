@@ -39,7 +39,7 @@ export default {
     beforeCreate(){
         onAuthStateChanged( getAuth(), (user) => {
         if (user) {    
-            this.$router.push('/');
+            this.$router.push('/wait');
         }else{
             this.$router.push('/register');
         }
